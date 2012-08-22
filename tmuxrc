@@ -1,0 +1,2 @@
+# Lets terminal scroll
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'

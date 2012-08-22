@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Note: bash is used because it's almost always available, zsh might not be.
+
+cd $(dirname $0)
+shopt -s extglob
+
+for sourcefile in !(README.md|setup)
+do
+  dotfile=~/.${sourcefile}
+  sourcefile=$(pwd -P)/${sourcefile} # I'm not sure I like this much
+  if [ -L ${dotfile} ] || ! [ -f ${dotfile} ]
+  then
+    rm -f ${dotfile}
+    ln -s ${sourcefile} ${dotfile}
+  else
+    echo "${dotfile} exists, I will not clobber it."
+  fi
+done
