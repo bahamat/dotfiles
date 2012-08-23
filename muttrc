@@ -1,0 +1,30 @@
+# Include local settings
+source ~/.muttrc.local
+## Server settings
+## set spoolfile     = imaps://server/INBOX
+## set folder        = imaps://server/
+## set smtp_url      = "smtp://username@server/"
+## set ssl_starttls  = yes
+## set ssl_force_tls = yes
+##
+## Me settings
+## set from      = ""
+## set realname  = ""
+## set imap_user = ""
+## set imap_pass = ""
+## set smtp_pass = ""
+
+# Solarized
+source $HOME/repos/solarized/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+
+# Folder handling
+set sort      = reverse-threads
+set record    = "=Sent Items"
+set postponed = "=Drafts"
+set trash     = "=Deleted Items"
+set delete    = yes
+
+# Caching
+set header_cache     = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
