@@ -28,3 +28,7 @@ set delete    = yes
 set header_cache     = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
+
+# Archiving
+save-hook . =Archive
+set confirmappend = no
