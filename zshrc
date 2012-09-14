@@ -122,6 +122,7 @@ then
 
   # Use Emacs keybindings.
   bindkey -e
+  bindkey ^U backward-kill-line
 
   # ZSH completion for ssh
   autoload -U compinit
