@@ -1,0 +1,16 @@
+Config { font = "-*-Fixed-bold-R-Normal-*-15-*-*-*-*-*-*-*"
+       , bgColor = "#002b36"
+       , fgColor = "#839496"
+       , position = TopW L 90
+       , commands = [ Run Weather "KSNA" ["-t"," <tempF> F","-L","64","-H","77","--normal","#859900","--high","#dc322f","--low","#2aa198"] 36000
+                    , Run Network "eth0" ["-L","0","-H","50","--normal","#859900","--high","#dc322f"] 9
+                    , Run Cpu ["-L","3","-H","50","--normal","#859900","--high","#dc322f"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %memory% * %swap% | %eth0%    <fc=#b58900>%date%</fc> | %KSNA%"
+       }
