@@ -37,7 +37,7 @@ case $TERM in
   *term* | xterm-*color | rxvt* | gnome* )
     [ -n "$ZSH_NAME" ] && HOSTNAME=$HOST
     precmd () {
-      echo -ne "\033]0;${USER}@${HOSTNAME//.*/} : ${PWD}\007"
+      echo -ne "\033]0;${USER}@${HOSTNAME//.*/}${PWD}\007"
     }
     PROMPT_COMMAND='precmd'
     ;;
@@ -112,8 +112,8 @@ if [ -n "$ZSH_NAME" ]
 then
 
   # set a fancy prompt
-  PS1="%F{blue}%n@%m] %f"  
-  RPROMPT="%F{blue}%(7~,.../,)%6~%f"
+  PROMPT="%F{blue}%m:%~]%f "
+  RPROMPT="%(?..%F{red}%? ↵%f)"
 
   setopt HIST_IGNORE_ALL_DUPS # Ignore duplicate entries
   setopt HIST_NO_STORE        # History doesn't save "history"
