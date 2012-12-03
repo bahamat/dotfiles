@@ -50,3 +50,6 @@ set certificate_file = ~/.mutt/certificates
 # Archiving
 save-hook . =Archive
 set confirmappend = no
+
+# Bind additional keys
+bind index "G" imap-fetch-mail
