@@ -31,12 +31,16 @@ source ~/.muttrc.local
 # Solarized
 source $HOME/repos/solarized/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
 
-# Folder handling
-set sort      = reverse-threads
+# Folders
 set record    = "=Sent Items"
 set postponed = "=Drafts"
-#set trash     = "=Deleted Items"
+set trash     = "=Deleted Items"
+
+# Message handling
 set delete    = yes
+set mark_old  = no
+set move      = no
+set sort      = reverse-threads
 
 # Caching
 set header_cache     = ~/.mutt/cache/headers
