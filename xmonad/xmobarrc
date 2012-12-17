@@ -13,8 +13,11 @@
 --   limitations under the License.
 
 Config { font = "-*-Fixed-bold-R-Normal-*-15-*-*-*-*-*-*-*"
+       , border = NoBorder
+       , borderColor = "#000000"
        , bgColor = "#002b36"
        , fgColor = "#839496"
+       , lowerOnStart = True
        , position = TopW L 90
        , commands = [ Run Weather "KSNA" ["-t"," <tempF> F","-L","64","-H","77","--normal","#859900","--high","#dc322f","--low","#2aa198"] 36000
                     , Run Network "eth0" ["-L","0","-H","50","--normal","#859900","--high","#dc322f"] 9
