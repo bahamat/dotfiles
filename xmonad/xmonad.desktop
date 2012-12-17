@@ -1,3 +1,6 @@
+# This was based on gnome.session that comes with gnome-session and is therefore licenced
+# under the GPLv2.
+
 # Place this in /usr/share/xsessions
 [Desktop Entry]
 Encoding=UTF-8
