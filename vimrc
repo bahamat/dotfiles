@@ -12,6 +12,12 @@
 "   See the License for the specific language governing permissions and
 "   limitations under the License.
 
+"""" Pull in local settings before applying global settings
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+
 """"
 """" More comfortable working environment
 """"
