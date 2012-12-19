@@ -15,7 +15,7 @@
 # Pull in local settings, if any
 if [ -f ~/.zshrc.local ]
 then
-  source ~/.zshrc.local ]
+  source ~/.zshrc.local
 fi
 
 # Set up additional paths
