@@ -59,6 +59,7 @@ colorscheme solarized
 
 " Disable keys that annoy me
 nnoremap Q <nop>
+nnoremap q <nop>
 
 " Forgot to sudo? Here's the answer.
 " This nice little baby I found at http://solidstateraam.com/saving-files-as-root-from-inside-vim/
