@@ -133,7 +133,7 @@ then
 
   # set a fancy prompt
   PROMPT="%F{blue}%m:%~]%f "
-  RPROMPT="%(?..%F{red}%? <-%f)"
+  RPROMPT="%(?..%F{red}'-> %?%f)"
 
   setopt HIST_IGNORE_ALL_DUPS # Ignore duplicate entries
   setopt HIST_NO_STORE        # History doesn't save "history"
