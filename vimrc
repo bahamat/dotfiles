@@ -73,6 +73,9 @@ cmap w!! w !sudo tee % >/dev/null
 """" Automation
 """"
 
+" Automatically trim trailing white space on any line.
+autocmd BufWritePre * :%s/\s\+$//e
+
 " From http://www.debian-administration.org/articles/571
 " Sets +x on stuff starting with the magic shebang.
 au BufWritePost * if getline(1) =~ "^#!" | silent !chmod a+x <afile>
