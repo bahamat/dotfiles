@@ -34,6 +34,7 @@ $HOME/bin
 /usr/games
 /Developer/Tools
 /Developer/usr/bin
+$HOME/.cabal/bin
 /usr/local/bin
 /usr/local/sbin
 /opt/local/bin
