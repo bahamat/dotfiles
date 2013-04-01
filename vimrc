@@ -91,3 +91,6 @@ au BufRead,BufNewFile *.cf set ft=cf3
 " for Apache
 au BufRead,BufNewFile *.net set ft=apache
 au BufRead,BufNewFile *.org set ft=apache
+
+" Makefile
+au FileType make set noexpandtab
