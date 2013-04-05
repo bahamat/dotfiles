@@ -17,7 +17,6 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-
 """"
 """" More comfortable working environment
 """"
@@ -37,6 +36,9 @@ set showmode
 " Additional options
 set laststatus=2              " always have a status bar
 set scrolloff=1               " don't let the curser get too close to the edge
+
+" Do NOT -- I repeat -- DO NOT FOLD
+set nofoldenable
 
 " Beautify
 syntax enable
