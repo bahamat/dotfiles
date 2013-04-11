@@ -30,6 +30,7 @@ set tabstop=2
 " Nicer environment
 set linebreak
 set ruler
+set ai
 set shortmess+=I
 set showmode
 
