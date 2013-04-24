@@ -107,6 +107,7 @@ esac
 alias ll='ls -l'
 alias la='ls -a'
 alias myip='lynx -dump http://automation.whatismyip.com/n09230945.asp'
+alias shs='python -m SimpleHTTPServer'
 alias ssh='ssh -A'
 alias vx='VBoxManage'
 alias wo='find . -user $LOGNAME -perm +0200 -type f | sort'
