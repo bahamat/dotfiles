@@ -12,7 +12,7 @@
 --   See the License for the specific language governing permissions and
 --   limitations under the License.
 
-Config { font = "-*-Fixed-bold-R-Normal-*-15-*-*-*-*-*-*-*"
+Config { font = "xft:Helvetica Heue-12:Regular"
        , border = NoBorder
        , borderColor = "#000000"
        , bgColor = "#002b36"
@@ -20,9 +20,9 @@ Config { font = "-*-Fixed-bold-R-Normal-*-15-*-*-*-*-*-*-*"
        , lowerOnStart = True
        , position = TopW L 90
        , commands = [ Run Weather "KSNA" ["-t"," <tempF> F","-L","64","-H","77","--normal","#859900","--high","#dc322f","--low","#2aa198"] 36000
-                    , Run Network "eth0" ["-L","0","-H","50","--normal","#859900","--high","#dc322f"] 9
-                    , Run Cpu ["-L","3","-H","50","--normal","#859900","--high","#dc322f"] 10
-                    , Run ThermalZone 1 [] 30
+                    , Run Network "eth0" ["-L","0","-H","50","--normal","#859900","--high","#dc322f","-w","6","-c"," "] 9
+                    , Run Cpu ["-L","3","-H","50","--normal","#859900","--high","#dc322f","-w","2"] 10
+                    , Run Com "getcoretemp" ["-m"] "temp" 30
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run Date "%a %b %_d %l:%M" "date" 10
@@ -30,5 +30,5 @@ Config { font = "-*-Fixed-bold-R-Normal-*-15-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% %thermal1% | %memory% * %swap% | %eth0%    <fc=#b58900>%date%</fc> | %KSNA%"
+       , template = "%StdinReader% }{ %cpu% %temp% C | %memory% : %swap% | %eth0%    <fc=#b58900>%date%</fc> | %KSNA% "
        }
