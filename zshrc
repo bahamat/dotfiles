@@ -112,6 +112,12 @@ alias ssh='ssh -A'
 alias vx='VBoxManage'
 alias wo='find . -user $LOGNAME -perm +0200 -type f | sort'
 
+# Functions
+
+hcgrep() {
+  sudo cf-promises -v | awk '/Hard classes/ {for (i=7;i<=NF-1;i++) {print $i}}' | grep $1
+}
+
 # Bash only options
 if [ -n "$BASH_VERSION" ]
 then
