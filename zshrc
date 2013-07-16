@@ -26,6 +26,8 @@ fi
 
 MY_PATHS="
 $HOME/bin
+/opt/pkg/sbin
+/opt/pkg/bin
 /usr/gnu/bin
 /usr/sfw/bin
 /usr/X11R6/bin
