@@ -114,6 +114,10 @@ alias ssh='ssh -A'
 alias vx='VBoxManage'
 alias wo='find . -user $LOGNAME -perm +0200 -type f | sort'
 
+# Crypto aliases
+alias enc='openssl enc -aes-256-cbc -in "$@"'
+alias dec='openssl enc -d -aes-256-cbc -in "$@"'
+
 # Functions
 
 hcgrep() {
