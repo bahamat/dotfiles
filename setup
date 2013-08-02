@@ -38,6 +38,8 @@ core.excludesfile=$HOME/.gitignore_global
 include.path=repos/dotfiles/gitconfig_roaming
 "
 
+# If it does not exist, create it.
+touch ~/.gitconfig
 for git_option in $GIT_OPTIONS
 do
   grep "$git_option" ~/.gitconfig || git config --global ${git_option/=/ }
