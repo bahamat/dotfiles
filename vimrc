@@ -23,9 +23,9 @@ endif
 
 " Tabs suck
 set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Nicer environment
 set linebreak
