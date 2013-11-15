@@ -18,4 +18,5 @@
 xscreensaver -no-splash &
 trayer --edge top --align right --SetDockType true --SetPartialStrut false --width 10 --expand true --transparent true --height 24 &
 [ -f /usr/bin/SpiderOak ] && /usr/bin/SpiderOak &
+[ -f ~/bin/xmonad.start.local ] && source ~/bin/xmonad.start.local
 exec xmonad
