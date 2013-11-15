@@ -19,7 +19,7 @@ Config { font = "xft:Helvetica Heue-12:Regular"
        , fgColor = "#839496"
        , lowerOnStart = True
        , position = TopW L 90
-       , commands = [ Run Weather "KSNA" ["-t"," <tempF> F","-L","64","-H","77","--normal","#859900","--high","#dc322f","--low","#2aa198"] 36000
+       , commands = [ Run Weather "KSNA" ["-t","<tempF> F <tempC> C","-L","64","-H","77","--normal","#859900","--high","#dc322f","--low","#2aa198"] 36000
                     , Run Network "eth0" ["-L","0","-H","50","--normal","#859900","--high","#dc322f","-w","6","-c"," "] 9
                     , Run Cpu ["-L","3","-H","50","--normal","#859900","--high","#dc322f","-w","2"] 10
                     , Run Com "getcoretemp" ["-m"] "temp" 30
