@@ -38,8 +38,9 @@ set showmode
 set laststatus=2              " always have a status bar
 set scrolloff=1               " don't let the curser get too close to the edge
 
-" Do NOT -- I repeat -- DO NOT FOLD
+" Do NOT do these things
 set nofoldenable
+set nohlsearch
 
 " Beautify
 syntax enable
