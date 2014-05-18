@@ -1,0 +1,1 @@
+/Users/bahamat/repos/vim-fugitive/plugin/fugitive.vim
