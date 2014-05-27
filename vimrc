@@ -96,5 +96,8 @@ au BufRead,BufNewFile *.cf set ft=cf3
 au BufRead,BufNewFile *.net set ft=apache
 au BufRead,BufNewFile *.org set ft=apache
 
+" for Bind
+au BufRead,BufNewFile db.* set ft=bindzone
+
 " Makefile
 au FileType make set noexpandtab
