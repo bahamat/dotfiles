@@ -6,9 +6,12 @@ Environmental Control
 Requires the following git repositories to be checked out in the same parent
 directory as dotfiles.
 
+    git clone https://github.com/bling/vim-airline.git
+    git clone https://github.com/tpope/vim-fugitive.git
     git clone https://github.com/plasticboy/vim-markdown.git
     git clone https://github.com/vim-scripts/Cfengine-version-3-syntax
     git clone https://github.com/altercation/solarized.git
+
 
 # Licensing
 

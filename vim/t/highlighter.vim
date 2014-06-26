@@ -1,1 +1,1 @@
-/Users/bahamat/repos/vim-airline/t/highlighter.vim
+../../../vim-airline/t/highlighter.vim

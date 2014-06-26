@@ -1,1 +1,1 @@
-/Users/bahamat/repos/vim-fugitive/doc/fugitive.txt
+../../../vim-fugitive/doc/fugitive.txt

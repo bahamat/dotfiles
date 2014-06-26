@@ -1,1 +1,1 @@
-/Users/bahamat/repos/vim-airline/t/init.vim
+../../../vim-airline/t/init.vim

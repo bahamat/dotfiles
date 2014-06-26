@@ -1,1 +1,1 @@
-/Users/bahamat/repos/vim-airline/t/parts.vim
+../../../vim-airline/t/parts.vim
