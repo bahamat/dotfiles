@@ -28,9 +28,10 @@ set softtabstop=4
 set tabstop=4
 
 " Nicer environment
+set ai
+set backspace=indent,eol,start
 set linebreak
 set ruler
-set ai
 set shortmess+=I
 set showmode
 
