@@ -112,6 +112,7 @@ alias myip='curl http://ifconfig.me/ip'
 alias shs='python -m SimpleHTTPServer'
 alias ssh='ssh -A'
 alias vx='VBoxManage'
+alias wd='watch --differences=cumulative'
 alias wo='find . -user $LOGNAME -perm +0200 -type f | sort'
 
 # Crypto aliases
