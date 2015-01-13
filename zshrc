@@ -157,7 +157,14 @@ then
 
   # Use Emacs keybindings.
   bindkey -e
+
+  # Fix ^U
   bindkey ^U backward-kill-line
+
+  # Fix ^W
+  autoload -U backward-kill-word-match
+  zle -N backward-kill-word backward-kill-word-match
+  zstyle ':zle:backward-kill-word' word-style whitespace
 
   # ZSH completion for ssh
   autoload -U compinit
