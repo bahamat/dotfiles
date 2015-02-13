@@ -109,20 +109,25 @@ esac
 alias ll='ls -l'
 alias la='ls -a'
 alias myip='curl http://ifconfig.me/ip'
+alias screen='screen -d -R'
 alias shs='python -m SimpleHTTPServer'
 alias ssh='ssh -A'
 alias vx='VBoxManage'
 alias wd='watch --differences=cumulative'
 alias wo='find . -user $LOGNAME -perm +0200 -type f | sort'
 
-# Crypto aliases
-alias enc='openssl enc -aes-256-cbc -in "$@"'
-alias dec='openssl enc -d -aes-256-cbc -in "$@"'
-
 # Functions
 
-hcgrep() {
-  sudo cf-promises -v | awk '/Hard classes/ {for (i=7;i<=NF-1;i++) {print $i}}' | grep $1
+function hcgrep () {
+  sudo cf-promises -v | awk '/Hard classes/ {for (i=7;i<=NF-1;i++) {print $i}}' | grep "$@"
+}
+
+function enc () {
+    openssl enc -aes-256-cbc -in "$@"
+}
+
+function dec () {
+    openssl enc -d -aes-256-cbc -in "$@"
 }
 
 # Bash only options

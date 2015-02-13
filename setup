@@ -16,17 +16,17 @@
 
 # Note: bash is used because it's almost always available, zsh might not be.
 
-cd $(dirname $0)
+cd "$(dirname "$0")"
 shopt -s extglob
 
 for sourcefile in !(README.md|setup)
 do
   dotfile=~/.${sourcefile}
   sourcefile=$(pwd -P)/${sourcefile} # I'm not sure I like this much
-  if [ -L ${dotfile} ] || ! [ -f ${dotfile} ]
+  if [ -L "${dotfile}" ] || ! [ -f "${dotfile}" ]
   then
-    rm -f ${dotfile}
-    ln -s ${sourcefile} ${dotfile}
+    rm -f "${dotfile}"
+    ln -s "${sourcefile}" "${dotfile}"
   else
     echo "${dotfile} exists, I will not clobber it."
   fi
@@ -42,5 +42,5 @@ include.path=repos/dotfiles/gitconfig_roaming
 touch ~/.gitconfig
 for git_option in $GIT_OPTIONS
 do
-  grep "$git_option" ~/.gitconfig || git config --global ${git_option/=/ }
+  grep "$git_option" ~/.gitconfig || git config --global "${git_option/=/ }"
 done
