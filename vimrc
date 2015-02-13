@@ -99,6 +99,9 @@ au BufRead,BufNewFile *.org set ft=apache
 
 " for Bind
 au BufRead,BufNewFile db.* set ft=bindzone
+au BufRead,BufNewFile zones.conf set ft=named
+au BufRead,BufNewFile zones.rfc1918 set ft=named
+au BufRead,BufNewFile named.conf.* set ft=named
 
 " Makefile
 au FileType make set noexpandtab
