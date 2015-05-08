@@ -1,1 +1,0 @@
-../../../Cfengine-version-3-syntax/syntax/cf3.vim

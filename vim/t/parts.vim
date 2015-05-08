@@ -1,1 +1,0 @@
-../../../vim-airline/t/parts.vim

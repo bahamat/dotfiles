@@ -44,3 +44,6 @@ for git_option in $GIT_OPTIONS
 do
   grep "$git_option" ~/.gitconfig || git config --global "${git_option/=/ }"
 done
+
+git submodule init
+git submodule update

@@ -1,1 +1,0 @@
-../../../vim-airline/t/extensions_default.vim

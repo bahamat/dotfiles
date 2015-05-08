@@ -1,0 +1,21 @@
+[submodule "vim/vim-pathogen"]
+	path = vim/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/bundle/Cfengine-version-3-syntax"]
+	path = vim/bundle/Cfengine-version-3-syntax
+	url = https://github.com/vim-scripts/Cfengine-version-3-syntax
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
