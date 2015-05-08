@@ -179,9 +179,9 @@ then
   zstyle ':completion:*' users off
   zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
-  if [[ -f ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]
+  if [[ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]
   then
-    source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 
 fi

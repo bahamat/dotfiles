@@ -19,10 +19,12 @@
 cd "$(dirname "$0")"
 shopt -s extglob
 
+dotfiles_base=$(git rev-parse --show-toplevel)
+
 for sourcefile in !(README.md|setup)
 do
   dotfile=~/.${sourcefile}
-  sourcefile=$(pwd -P)/${sourcefile} # I'm not sure I like this much
+  sourcefile=${dotfiles_base}/${sourcefile} # I'm not sure I like this much
   if [ -L "${dotfile}" ] || ! [ -f "${dotfile}" ]
   then
     rm -f "${dotfile}"
@@ -36,7 +38,7 @@ done
 read -r -d '' GIT_OPTIONS << __J__
 {
   "core.excludesfile": "$HOME/.gitignore_global",
-  "include.path": "repos/dotfiles/gitconfig_roaming",
+  "include.path": "${dotfiles_base}/gitconfig_roaming",
   "push.default": "simple"
 }
 __J__

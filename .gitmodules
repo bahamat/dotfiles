@@ -19,3 +19,9 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "mutt/mutt-colors-solarized"]
+	path = mutt/mutt-colors-solarized
+	url = https://github.com/altercation/mutt-colors-solarized
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
