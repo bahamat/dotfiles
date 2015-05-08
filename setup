@@ -33,17 +33,20 @@ do
 done
 
 # Set up git options
-GIT_OPTIONS="
-core.excludesfile=$HOME/.gitignore_global
-include.path=repos/dotfiles/gitconfig_roaming
-"
+read -r -d '' GIT_OPTIONS << __J__
+{
+  "core.excludesfile": "$HOME/.gitignore_global",
+  "include.path": "repos/dotfiles/gitconfig_roaming",
+  "push.default": "simple"
+}
+__J__
 
 # If it does not exist, create it.
 touch ~/.gitconfig
-for git_option in $GIT_OPTIONS
+for git_option in $(json -ak <<< "$GIT_OPTIONS")
 do
-  grep "$git_option" ~/.gitconfig || git config --global "${git_option/=/ }"
+  git config "$git_option" > /dev/null || \
+    git config --global "${git_option}" "$(json "[\"${git_option}\"]" <<< "$GIT_OPTIONS")"
 done
 
-git submodule init
-git submodule update
+( git submodule init && git submodule update) &
