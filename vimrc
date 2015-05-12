@@ -61,6 +61,14 @@ let g:solarized_contrast  ="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
+" Mark non-ascii characters
+match Error /[^ -~]/
+
+" Make errors VERY VISIBLE
+" Example: “string using non-ascii quotes”
+hi Error ctermbg=DarkRed
+hi Error ctermfg=Cyan
+
 """"
 """" Remap Commands
 """"
