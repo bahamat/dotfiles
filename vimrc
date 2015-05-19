@@ -62,7 +62,7 @@ let g:solarized_visibility="high"
 colorscheme solarized
 
 " Mark non-ascii characters
-match Error /[^ -~]/
+match Error /[^ -~\t]/
 
 " Make errors VERY VISIBLE
 " Example: “string using non-ascii quotes”
