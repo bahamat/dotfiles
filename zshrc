@@ -62,7 +62,7 @@ case $TERM in
   *term* | xterm-*color | rxvt* | gnome* )
     [ -n "$ZSH_NAME" ] && HOSTNAME=$HOST
     precmd () {
-      echo -ne "\033]0;${USER}@${HOSTNAME//.*/}${PWD}\007"
+      echo -ne "\033]0;${HOSTNAME//.*/}:${PWD}\007"
     }
     PROMPT_COMMAND='precmd'
     ;;
