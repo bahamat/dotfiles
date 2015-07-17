@@ -39,8 +39,8 @@ $HOME/bin
 $HOME/.cabal/bin
 /usr/local/bin
 /usr/local/sbin
-/usr/pkg/bin
-/usr/pkg/sbin
+/opt/pkg/bin
+/opt/pkg/sbin
 /opt/local/bin
 /opt/local/sbin
 /opt/sfw/bin
