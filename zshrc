@@ -22,6 +22,9 @@ fi
 if [[ "$OSTYPE" == "solaris2.11" ]]
 then
   export PATH=/usr/gnu/bin:/usr/bin:/usr/sbin:/sbin
+  alias p='pfexec'
+else
+    alias p='sudo'
 fi
 
 MY_PATHS="
