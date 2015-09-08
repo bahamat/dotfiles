@@ -43,6 +43,10 @@ set smartcase
 set laststatus=2              " always have a status bar
 set scrolloff=1               " don't let the curser get too close to the edge
 
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
+
 " Do NOT do these things
 set nofoldenable
 set nohlsearch
