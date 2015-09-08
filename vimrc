@@ -37,6 +37,7 @@ set linebreak
 set ruler
 set shortmess+=I
 set showmode
+set smartcase
 
 " Additional options
 set laststatus=2              " always have a status bar
