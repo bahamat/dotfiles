@@ -53,3 +53,9 @@ set confirmappend = no
 
 # Bind additional keys
 bind index "G" imap-fetch-mail
+
+# Markdown to HTML MIME type
+# Press <esc>+5
+# See http://unix.stackexchange.com/a/108809/3309
+macro compose \e5 "F pandoc -s -f markdown -t html \ny^T^Utext/html; charset=us-ascii\n"
+set wait_key=no
