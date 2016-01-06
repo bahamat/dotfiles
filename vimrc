@@ -66,6 +66,9 @@ let g:solarized_contrast  ="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
+" gist-vim
+let g:gist_post_private = 1
+
 " Mark non-ascii characters
 match Error /[^ -~\t]/
 

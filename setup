@@ -39,7 +39,8 @@ read -r -d '' GIT_OPTIONS << __J__
 {
   "core.excludesfile": "$HOME/.gitignore_global",
   "include.path": "${dotfiles_base}/gitconfig_roaming",
-  "push.default": "simple"
+  "push.default": "simple",
+  "github.user": "bahamat"
 }
 __J__
 
