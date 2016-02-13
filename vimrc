@@ -56,7 +56,7 @@ syntax enable
 set background=dark
 
 " Solarized
-"let g:solarized_termcolors=256
+"let g:solarized_termcolors=16
 let g:solarized_termtrans =1
 let g:solarized_degrade   =0
 let g:solarized_bold      =0
@@ -65,6 +65,10 @@ let g:solarized_italic    =0
 let g:solarized_contrast  ="high"
 let g:solarized_visibility="high"
 colorscheme solarized
+
+" vim-json
+" FFS, don't hide things!
+let g:vim_json_syntax_conceal = 0
 
 " gist-vim
 let g:gist_post_private = 1
@@ -92,6 +96,8 @@ cmap w!! w !sudo tee % >/dev/null
 " Encrypt/Decrypt arbitrary files
 " cmap encrypt % !openssl enc -e -aes256 -salt -a
 " cmap decrypt % !openssl enc -d -aes256 -salt -a
+cmap gpg-e % !gpg2 --encrypt --armor
+cmap gpg-d % !gpg2 --decrypt
 
 """"
 """" Automation
