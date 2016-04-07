@@ -36,7 +36,6 @@ set backspace=indent,eol,start
 set linebreak
 set ruler
 set shortmess+=I
-set showmode
 set smartcase
 
 " Additional options
@@ -130,3 +129,21 @@ au BufRead,BufNewFile named.conf.* set ft=named
 
 " Makefile
 au FileType make set noexpandtab
+
+" Lightline
+set noshowmode
+let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component': {
+    \   'readonly': '%{&readonly?"🔏":""}',
+    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+    \ },
+    \ 'component_visible_condition': {
+    \   'readonly': '(&filetype!="help"&& &readonly)',
+    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+    \ },
+\ }
