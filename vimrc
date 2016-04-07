@@ -130,6 +130,30 @@ au BufRead,BufNewFile named.conf.* set ft=named
 " Makefile
 au FileType make set noexpandtab
 
+" Easy edit and reload
+nmap <silent>  ;v  :next $MYVIMRC<CR>
+augroup VimReload
+    autocmd!
+    autocmd BufWritePost  $MYVIMRC  source $MYVIMRC
+augroup END
+
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Make vim act more like a modern text editor.
+set autowrite
+set updatecount=10
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undo')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undolevels=5000
+    set undofile
+endif
+
 " Lightline
 set noshowmode
 let g:lightline = {
