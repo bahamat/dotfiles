@@ -3,3 +3,7 @@ xmonad.errors
 xmonad-x86_64-linux
 xmonad.hi
 xmonad.o
+mutt/cache
+mutt/certificates
+vim/undo
+vim/backup
