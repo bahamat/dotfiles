@@ -156,9 +156,20 @@ fi
 if [ -n "$ZSH_NAME" ]
 then
 
-  # set a fancy prompt
-  PROMPT="%F{blue}%m:%~]%f "
-  RPROMPT="%(?..%F{red}'-> %?%f)"
+    function setprompt () {
+        case $1 in
+            default|normal|fancy)
+                # set a fancy prompt
+                PROMPT="%F{blue}%m:%~]%f "
+                RPROMPT="%(?..%F{red}'-> %?%f)"
+                ;;
+            test|demo)
+                PROMPT='%F{blue}%%%f '
+                RPROMPT=''
+                ;;
+        esac
+    }
+    setprompt default
 
   setopt HIST_IGNORE_ALL_DUPS # Ignore duplicate entries
   setopt HIST_NO_STORE        # History doesn't save "history"
