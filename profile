@@ -1,4 +1,4 @@
-#   Copyright 2012 Brian Bennett
+#   Copyright 2017 Brian Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -161,3 +161,6 @@ export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;33;246m'   # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
+# If we have go set up, use it.
+[[ -f ~/.golang_env ]] && source ~/.golang_env

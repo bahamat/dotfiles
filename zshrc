@@ -1,4 +1,4 @@
-#   Copyright 2012 Brian Bennett
+#   Copyright 2017 Brian Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -199,3 +199,6 @@ then
   fi
 
 fi
+
+# If we have go set up, use it.
+[[ -f ~/.golang_env ]] && source ~/.golang_env
