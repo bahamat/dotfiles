@@ -36,8 +36,8 @@ done
 
 # Set up git options
 {
-    git config core.excludesfile || git config --global core.excludesfile "$HOME/.gitignore_global"
-    git config include.path || git config --global include.path "${dotfiles_base}/gitconfig_roaming"
+    git config core.excludesfile || git config --global core.excludesfile "$HOME/.gitignore.global"
+    git config include.path || git config --global include.path "${dotfiles_base}/gitconfig.roaming"
     git config push.default || git config --global push.default "current"
     git config github.user || git config --global github.user "bahamat"
 } >/dev/null
