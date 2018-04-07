@@ -1,7 +1,14 @@
-dotfiles
-========
+# dotfiles
 
-Environmental Control
+## Setup
+
+    export PATH=/opt/local/bin:$PATH
+    git clone https://github.com/bahamat/dotfiles/ .dotfiles
+    cd .dotfiles
+    ./setup
+    source ~/.zshrc
+
+## Environmental Control
 
 Requires the following git repositories to be checked out in the same parent
 directory as dotfiles.
@@ -16,12 +23,12 @@ directory as dotfiles.
 # Licensing
 
 Each file in this repository is individually licensed. Unless otherwise specified
-all files are Copyright 2002-2012 Brian Bennett with all rights reserved.
+all files are Copyright 2002-2018 Brian Bennett with all rights reserved.
 
 I release all right, title and interest (if I ever had any) of  machine files
 (including symlinks and the .git directory).
 
-Copyright 2012 Brian Bennett
+Copyright 2018 Brian Bennett
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
