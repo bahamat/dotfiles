@@ -152,8 +152,12 @@ then
                 RPROMPT="%(?..%F{red}'-> %?%f)"
                 ;;
             test|demo)
-                PROMPT='%F{blue}%%%f '
+                PROMPT='%F{blue}>%f '
                 RPROMPT=''
+                ;;
+            emoji)
+                PROMPT="%F{blue}💻 %~ 🐚%f "
+                RPROMPT="%(?..%F{red}😖 %?%f)"
                 ;;
         esac
     }
