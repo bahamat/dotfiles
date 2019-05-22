@@ -42,6 +42,14 @@ done
     git config github.user || git config --global github.user "bahamat"
 } >/dev/null
 
+# Set up npm options
+# See https://docs.npmjs.com/getting-started/fixing-npm-permissions
+{
+    npm config set progress false
+    npm config set depth 0
+    npm config set unsafe-perm true
+}
+
 git submodule init >/dev/null
 git submodule update --depth=1 >/dev/null
 git submodule foreach 'git reset HEAD --hard' >/dev/null
