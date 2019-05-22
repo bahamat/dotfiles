@@ -12,6 +12,13 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+# Session support
+# See ~/.zshrc_Apple_Terminal
+function shell_session_save_user_state() {
+    printf 'cd "%s"\n' "${PWD}" >> "$SHELL_SESSION_FILE"
+}
+[[ -r "$HOME/.zshrc_$TERM_PROGRAM" ]] && source "$HOME/.zshrc_$TERM_PROGRAM"
+
 # Pull in local settings, if any
 if [ -f ~/.zshrc.local ]
 then
