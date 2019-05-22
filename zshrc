@@ -27,32 +27,28 @@ else
     alias p='sudo'
 fi
 
-MY_PATHS="
-$HOME/bin
-/opt/pkg/sbin
-/opt/pkg/bin
-/usr/gnu/bin
-/usr/sfw/bin
-/usr/X11R6/bin
-/sbin
-/usr/sbin
-/usr/games
-/Developer/Tools
-/Developer/usr/bin
-$HOME/.cabal/bin
-/usr/local/bin
-/usr/local/sbin
-/opt/pkg/bin
-/opt/pkg/sbin
-/opt/local/bin
-/opt/local/sbin
-/opt/sfw/bin
-"
+MY_PATHS=(
+    "$HOME/bin"
+    "/opt/pkg/sbin"
+    "/opt/pkg/bin"
+    "/usr/gnu/bin"
+    "/usr/sfw/bin"
+    "/usr/X11R6/bin"
+    "/sbin"
+    "/usr/sbin"
+    "/usr/games"
+    "/Developer/Tools"
+    "/Developer/usr/bin"
+    "$HOME/.cabal/bin"
+    "$HOME/.npm-global/bin"
+    "/usr/local/bin"
+    "/usr/local/sbin"
+    "/opt/local/bin"
+    "/opt/local/sbin"
+    "/opt/sfw/bin"
+)
 
-[ -n "$BASH_VERSION" ] && all_paths=${MY_PATHS}
-[ -n "$ZSH_NAME" ] && all_paths=(${(f)MY_PATHS})
-
-for this_path in $all_paths; do
+for this_path in "${MY_PATHS[@]}"; do
     if [ -d "$this_path" ] && [[ ":$PATH:" != *":$this_path:"* ]]; then
         PATH="$PATH:$this_path"
     fi
@@ -65,9 +61,8 @@ case $TERM in
   *term* | xterm-*color | rxvt* | gnome* )
     [ -n "$ZSH_NAME" ] && HOSTNAME=$HOST
     precmd () {
-      echo -ne "\033]0;${HOSTNAME//.*/}:${PWD}\007"
+      printf '\e]0;%s\a' "${HOSTNAME//.*/}:${PWD}"
     }
-    PROMPT_COMMAND='precmd'
     ;;
   *)
     ;;
@@ -123,10 +118,6 @@ alias wo='find . -user $LOGNAME -perm +0200 -type f | sort'
 
 # Functions
 
-function hcgrep () {
-  sudo cf-promises -v | awk '/Hard classes/ {for (i=7;i<=NF-1;i++) {print $i}}' | grep "$@"
-}
-
 function enc () {
     openssl enc -aes-256-cbc -in "$@"
 }
@@ -135,22 +126,19 @@ function dec () {
     openssl enc -d -aes-256-cbc -in "$@"
 }
 
-# Bash only options
-if [ -n "$BASH_VERSION" ]
-then
+function joinstr () {
+    # https://stackoverflow.com/a/17841619/818112
+    local IFS="$1"; shift
+    echo "$*"
+}
 
-  # set a fancy prompt
-  PS1='\h:\w \u\$ '
+function murl () {
+    echo "${MANTA_URL}${1}"
+}
 
-  # Make bash check it's window size after a process completes
-  shopt -s checkwinsize
-
-  # Turn on bash completion if available
-  if [ -f /etc/bash_completion ]; then
-     . /etc/bash_completion
-  fi
-
-fi
+function pkgstat () {
+    pkgin -pl '<' ls
+}
 
 # Zsh only options
 if [ -n "$ZSH_NAME" ]
@@ -186,6 +174,7 @@ then
   autoload -U backward-kill-word-match
   zle -N backward-kill-word backward-kill-word-match
   zstyle ':zle:backward-kill-word' word-style whitespace
+  WORDCHARS="${WORDCHARS}|"
 
   # ZSH completion for ssh
   autoload -U compinit
