@@ -24,11 +24,10 @@ endif
 """" More comfortable working environment
 """"
 
-" Tabs suck
-set expandtab
+" Tabs I can deal with
 set shiftwidth=4
 set softtabstop=4
-set tabstop=4
+set tabstop=8
 
 " Nicer environment
 set ai
