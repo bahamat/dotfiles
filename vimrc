@@ -102,6 +102,10 @@ cmap gpg-d % !gpg2 --decrypt
 """" Automation
 """"
 
+" Highlight white space at end of line or mixed tab+space
+highlight ExtraWhitespace ctermbg=DarkRed
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
 " Automatically trim trailing white space on any line.
 autocmd BufWritePre * :%s/\s\+$//e
 
