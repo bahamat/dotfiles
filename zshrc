@@ -161,7 +161,11 @@ then
                 ;;
         esac
     }
-    setprompt default
+    if (( ASCIINEMA_REC == 1 )); then
+        setprompt demo
+    else
+        setprompt default
+    fi
 
   setopt HIST_IGNORE_ALL_DUPS # Ignore duplicate entries
   setopt HIST_NO_STORE        # History doesn't save "history"
