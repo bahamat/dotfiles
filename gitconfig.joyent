@@ -1,2 +1,6 @@
 [user]
 	email = brian.bennett@joyent.com
+
+[branch "master"]
+
+	pushRemote =  DO_NOT_PUSH_TO_MASTER
