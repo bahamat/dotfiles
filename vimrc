@@ -25,6 +25,7 @@ endif
 """"
 
 " Tabs I can deal with
+set expandtab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=8
@@ -131,8 +132,13 @@ au BufRead,BufNewFile zones.conf set ft=named
 au BufRead,BufNewFile zones.rfc1918 set ft=named
 au BufRead,BufNewFile named.conf.* set ft=named
 
-" Makefile
+" File types that prefer tabs
+au FileType javascript set noexpandtab
 au FileType make set noexpandtab
+
+" File types that prefer spaces
+au FileType yaml set expandtab
+au FileType markdown set expandtab
 
 " Easy edit and reload
 nmap <silent>  ;v  :next $MYVIMRC<CR>
