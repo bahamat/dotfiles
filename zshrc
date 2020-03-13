@@ -61,6 +61,8 @@ for this_path in "${MY_PATHS[@]}"; do
     fi
 done
 
+[[ -f ~/.cargo/env ]] && source ~/.cargo/env
+
 unset MY_PATHS
 
 # Set user titlebar
