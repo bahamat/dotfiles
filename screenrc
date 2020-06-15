@@ -17,11 +17,7 @@ startup_message off
 
 # Allow scrollback
 termcapinfo xterm* ti@:te@
+term screen-256color
 
-# Set a sane escape key
-escape ^bb
-
-## Info Lines
+# Info Lines
 caption always "%{= kc}windows: %?%-Lw%?%{= kY}%n*%f %t%?(%u)%?%{= kc}%?%+Lw%?"
-#hardstatus alwayslastline "%{rk}%H %{gk}%c %{yk}%M%d %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
-hardstatus alwayslastline "SCREEN | %H | %M%d %c | %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
