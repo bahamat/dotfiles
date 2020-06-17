@@ -1,4 +1,4 @@
-#   Copyright 2017 Brian Bennett
+#   Copyright 2020 Brian Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -13,27 +13,29 @@
 #   limitations under the License.
 
 # Set up additional paths
-if [ "$OSTYPE" == "solaris2.11" ]
+if [[ "$OSTYPE" == "solaris2.11" ]]
 then
   export PATH=/usr/gnu/bin:/usr/bin:/usr/sbin:/sbin
 fi
 
-MY_PATHS="
-$HOME/bin
-/usr/gnu/bin
-/usr/sfw/bin
-/usr/X11R6/bin
-/sbin
-/usr/sbin
-/usr/games
-/Developer/Tools
-/Developer/usr/bin
-/usr/local/bin
-/usr/local/sbin
-/opt/local/bin
-/opt/local/sbin
-/opt/sfw/bin
-"
+MY_PATHS=(
+    "$HOME/bin"
+    "opt/pkg/sbin"
+    "/opt/pkg/bin"
+    "/usr/gnu/bin"
+    "/usr/sfw/bin"
+    "/usr/X11R6/bin"
+    "/sbin"
+    "/usr/sbin"
+    "/usr/games"
+    "/Developer/Tools"
+    "/Developer/usr/bin"
+    "/usr/local/bin"
+    "/usr/local/sbin"
+    "/opt/local/bin"
+    "/opt/local/sbin"
+    "/opt/sfw/bin"
+)
 
 for path in $MY_PATHS; do
   if ! echo $PATH | grep $path >/dev/null ; then
@@ -147,7 +149,9 @@ sniff6 () {
 }
 
 # Unlock my ssh keys
-ssh-add -k 2>/dev/null
+if [[ $OSTYPE =~ darwin ]]; then
+    ssh-add -l >/dev/null || ssh -add -A 2>/dev/null
+fi
 
 # Make bash check it's window size after a process completes
 shopt -s checkwinsize
