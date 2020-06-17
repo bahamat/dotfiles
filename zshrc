@@ -1,4 +1,4 @@
-#   Copyright 2017 Brian Bennett
+#   Copyright 2020 Brian Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -46,7 +46,6 @@ MY_PATHS=(
     "/usr/games"
     "/Developer/Tools"
     "/Developer/usr/bin"
-    "$HOME/.cabal/bin"
     "$HOME/.npm-global/bin"
     "/usr/local/bin"
     "/usr/local/sbin"
@@ -66,16 +65,19 @@ done
 unset MY_PATHS
 
 # Set user titlebar
-case $TERM in
-  *term* | xterm-*color | rxvt* | gnome* )
-    [ -n "$ZSH_NAME" ] && HOSTNAME=$HOST
-    precmd () {
-      printf '\e]0;%s\a' "${HOSTNAME//.*/}:${PWD}"
-    }
-    ;;
-  *)
-    ;;
-esac
+set_precmd() {
+    case $TERM in
+      *term* | xterm-*color | rxvt* | gnome* )
+        [ -n "$ZSH_NAME" ] && HOSTNAME=$HOST
+        precmd () {
+          printf '\e]0;%s\a' "${HOSTNAME//.*/}:${PWD}"
+        }
+        ;;
+      *)
+        ;;
+    esac
+}
+set_precmd
 
 # for tmux: export 256color
 [ -n "$TMUX" ] && export TERM=screen-256color
@@ -159,10 +161,14 @@ then
                 # set a fancy prompt
                 PROMPT="%F{blue}%m:%~]%f "
                 RPROMPT="%(?..%F{red}'-> %?%f)"
+                set_precmd
                 ;;
             test|demo)
                 PROMPT='%F{blue}>%f '
                 RPROMPT=''
+                precmd() {
+                    printf '\e]0;%s\a' "Terminal"
+                }
                 ;;
             emoji)
                 PROMPT="%F{blue}💻 %~ 🐚%f "
