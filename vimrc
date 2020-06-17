@@ -1,4 +1,4 @@
-"   Copyright 2012 Brian Bennett
+"   Copyright 2020 Brian Bennett
 "
 "   Licensed under the Apache License, Version 2.0 (the "License");
 "   you may not use this file except in compliance with the License.
@@ -133,6 +133,8 @@ au BufRead,BufNewFile zones.rfc1918 set ft=named
 au BufRead,BufNewFile named.conf.* set ft=named
 
 " File types that prefer tabs
+au FileType c set noexpandtab
+au FileType cpp set noexpandtab
 au FileType javascript set noexpandtab
 au FileType make set noexpandtab
 
