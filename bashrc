@@ -63,7 +63,12 @@ if [ "$TERM_PROGRAM" == "Apple_Terminal" ] && [ -z "$INSIDE_EMACS" ]; then
     local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
     printf '\e]7;%s\a' "$PWD_URL"
   }
-  PROMPT_COMMAND="update_terminal_cwd; $PROMPT_COMMAND"
+  PROMPT_COMMAND="update_terminal_cwd${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+fi
+
+# If this is bash, emulate zsh's missing newline marker
+if [[ -n BASH_VERSION ]]; then
+    PROMPT_COMMAND='printf "%%%$((COLUMNS-1))s\\r";'"$PROMPT_COMMAND"
 fi
 
 # set a fancy prompt
