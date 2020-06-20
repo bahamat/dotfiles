@@ -187,3 +187,7 @@ let g:lightline = {
 
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
+
+let g:syntastic_sh_shellcheck_args="-x"
+
+
