@@ -120,9 +120,11 @@ esac
 alias ll='ls -l'
 alias la='ls -a'
 alias myip='curl http://ifconfig.me/ip'
+alias pstree='proctree'
+alias ptree='proctree'
 alias screen='screen -d -R'
 alias shs='python -m SimpleHTTPServer'
-alias ssh='ssh -A'
+#alias ssh='ssh -A'
 alias vx='VBoxManage'
 alias wd='watch --differences=cumulative'
 alias wo='find . -user $LOGNAME -perm +0200 -type f | sort'
@@ -147,6 +149,11 @@ function murl () {
     echo "${MANTA_URL}${1}"
 }
 
+function mcurl () {
+    obj="$1" ; shift
+    curl "${MANTA_URL}${obj}" "$@"
+}
+
 function pkgstat () {
     pkgin -pl '<' ls
 }
@@ -162,6 +169,9 @@ then
                 PROMPT="%F{blue}%m:%~]%f "
                 RPROMPT="%(?..%F{red}'-> %?%f)"
                 set_precmd
+                ;;
+            short)
+                PROMPT="%F{blue}:%2(~#~/.../%2~#%2~)]%f "
                 ;;
             test|demo)
                 PROMPT='%F{blue}>%f '
@@ -214,3 +224,7 @@ fi
 
 # If we have go set up, use it.
 [[ -f ~/.golang_env ]] && source ~/.golang_env
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
