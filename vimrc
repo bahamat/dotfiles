@@ -185,6 +185,10 @@ let g:lightline = {
     \ },
 \ }
 
+" vim command line auto completion
+set wildmenu
+set wildmode=longest,list
+
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
 
