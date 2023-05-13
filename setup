@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#   Copyright 2012 Brian Bennett
+#   Copyright 2023 Brian Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -38,8 +38,17 @@ done
 {
     git config core.excludesfile || git config --global core.excludesfile "$HOME/.gitignore.global"
     git config include.path || git config --global include.path "${dotfiles_base}/gitconfig.roaming"
-    git config push.default || git config --global push.default "current"
-    git config github.user || git config --global github.user "bahamat"
+
+    # Make git branch behavior work correctly.
+    git config brnach.autoSetupMerge || git config --global branch.autoSetupMerge always
+    git config checkout.defaultRemote || git config --global checkout.defaultRemote origin
+    git config push.default || git config --global push.default current
+    git config push.autoSetupRemote || git config --global push.autoSetupRemote true
+    git config pull.default || git config --global pull.default current
+    git config pull.rebase || git config --global pull.rebase true
+    git config remote.pushDefault || git config --global remote.pushDefault origin
+
+    git config github.user || git config --global github.user bahamat
 } >/dev/null
 
 # Set up npm options
