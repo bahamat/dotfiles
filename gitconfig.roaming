@@ -1,6 +1,3 @@
-[includeIf "gitdir:**/joyent/**"]
-    path = ~/.gitconfig.joyent
-
 [alias]
 	history = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(green)%d%C(reset)%n%s' --date-order
 	hist = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cI%C(reset)%C(green)%d%C(reset)%n%s' --date-order
