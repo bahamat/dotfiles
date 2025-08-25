@@ -1,4 +1,4 @@
-#   Copyright 2020 Brian Bennett
+#   Copyright 2025 Brianna Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -117,19 +117,6 @@ case $TERM_PROGRAM in
     ;;
 esac
 
-case $HOSTNAME in
-  skybyte*)
-    export DEBFULLNAME="Brian Bennett"
-    export DEBEMAIL=brian.bennett@ntrepidcorp.com
-    ;;
-  dbuild*)
-    export DEBFULLNAME="Brian Bennett"
-    export DEBEMAIL=bahamat@digitalelf.net
-    ;;
-  *)
-    ;;
-esac
-
 # Aliases
 alias ipsort='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4'
 alias ll='ls -l'
@@ -173,3 +160,6 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # If we have go set up, use it.
 [[ -f ~/.golang_env ]] && source ~/.golang_env
+
+# If we have rust set up, use it.
+[[ -f ~/.cargo/env ]] && source ~/.cargo/env

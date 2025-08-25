@@ -1,4 +1,4 @@
-#   Copyright 2020 Brian Bennett
+#   Copyright 2025 Brianna Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -17,3 +17,7 @@ if [[ $OSTYPE =~ darwin ]]; then
 fi
 export GPG_TTY=$(tty)
 export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
+
+[[ -f ~/.cargo/env ]] && source ~/.cargo/env
+
+export RUST_LOG_PRETTY="true"

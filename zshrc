@@ -1,4 +1,4 @@
-#   Copyright 2020 Brian Bennett
+#   Copyright 2025 Brianna Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -52,7 +52,10 @@ MY_PATHS=(
     "/opt/local/bin"
     "/opt/local/sbin"
     "/opt/sfw/bin"
+    "/opt/homebrew/bin"
 )
+
+#export PATH=$PATH:$(IFS=':'; printf '%s' "${MY_PATHS[*]}")
 
 for this_path in "${MY_PATHS[@]}"; do
     if [ -d "$this_path" ] && [[ ":$PATH:" != *":$this_path:"* ]]; then
@@ -108,20 +111,10 @@ export LESS_TERMCAP_zz=$'\E[0m'           # reset
 export EDITOR="vi"
 export RSYNC_RSH="ssh"
 
-case $HOSTNAME in
-  dbuild*)
-    export DEBFULLNAME="Brian Bennett"
-    export DEBEMAIL="bahamat@digitalelf.net"
-    ;;
-  * )
-    ;;
-esac
-
 alias ll='ls -l'
 alias la='ls -a'
 alias myip='curl http://ifconfig.me/ip'
-alias pstree='proctree'
-alias ptree='proctree'
+alias ptree='pstree'
 alias screen='screen -d -R'
 alias shs='python -m SimpleHTTPServer'
 #alias ssh='ssh -A'
@@ -146,7 +139,9 @@ function joinstr () {
 }
 
 function murl () {
-    echo "${MANTA_URL}${1}"
+    for i in "$@"; do
+        echo "${MANTA_URL}${i}"
+    done
 }
 
 function mcurl () {

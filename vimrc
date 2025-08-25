@@ -1,4 +1,4 @@
-"   Copyright 2020 Brian Bennett
+"   Copyright 2025 Brianna Bennett
 "
 "   Licensed under the Apache License, Version 2.0 (the "License");
 "   you may not use this file except in compliance with the License.

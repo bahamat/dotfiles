@@ -1,4 +1,4 @@
-#   Copyright 2017 Brian Bennett
+#   Copyright 2025 Brianna Bennett
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -13,6 +13,6 @@
 #   limitations under the License.
 
 if [[ -d $HOME/go ]]; then
-    export GOPATH=$HOME/go
+    export GOPATH=$HOME/src/Go
     export PATH=$GOPATH/bin:$PATH
 fi

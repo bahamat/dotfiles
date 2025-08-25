@@ -23,12 +23,12 @@ directory as dotfiles.
 # Licensing
 
 Each file in this repository is individually licensed. Unless otherwise specified
-all files are Copyright 2002-2018 Brian Bennett with all rights reserved.
+all files are Copyright 2002-2025 Brianna Bennett with all rights reserved.
 
 I release all right, title and interest (if I ever had any) of  machine files
 (including symlinks and the .git directory).
 
-Copyright 2018 Brian Bennett
+Copyright 2025 Brianna Bennett
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
